@@ -13,13 +13,7 @@ function App() {
   return (
     <Router >
       <div className="App">
-        <header className="App-header">
           <Login/>
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-        
-        </header>
       </div>
     </Router>
   );

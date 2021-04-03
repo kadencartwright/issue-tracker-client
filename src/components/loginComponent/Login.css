@@ -1,0 +1,50 @@
+.login{
+    width:600px;
+    height: 540px;
+    background-color: white;
+    border-radius: 54px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+input{
+    border-radius: 44px;
+
+}
+.input-field{
+    text-align: center;
+    --border-width: 1px;
+    outline: none;
+    border: var(--border-width) solid black;
+    height: 50px;
+    width: calc(100% - var(--border-width)); /* width is container width minus border*/
+
+}
+.invalid-field{
+    border-color: red;
+}
+.input-field-error-message{
+    font-size: 14px;
+    padding-top: 0px;
+    margin: 0px;
+    color: red;
+}
+.form-element{
+    margin-bottom: 10px;
+
+}
+.login-button{
+    width: 100%;
+    margin-top: 10px;
+    margin: auto ;
+    height: 40px;
+    text-decoration: none;
+    border: none;
+    display: block;
+}
+
+form{
+    margin: 0 auto;
+    width: 300px;
+}
