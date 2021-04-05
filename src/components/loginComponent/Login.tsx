@@ -1,18 +1,19 @@
 import './Login.css'
-import LoginService from '../../api/login'
 import  React, { useEffect, useState } from 'react'
-import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, useHistory} from "react-router-dom";
+import { useAuth } from '../ProvideAuth';
 export const Login = ()=> {
     const [email, setEmail] = useState('')
     const [emailError, setEmailError] = useState(false)
 
     const [password, setPassword] = useState('')
     const [passwordError, setPasswordError] = useState(false)
+    const history = useHistory()
+    const auth = useAuth()
     const handleLogin = async()=>{
         if (!passwordError && !emailError){
-            let loginService = new LoginService();
-            let userResult = await loginService.loginUser({email:'test',password:'test'})
-            console.log(userResult)
+            await auth.login({email:'test',password:'test'})
+            history.push('/')
         }else{
         }
     }
