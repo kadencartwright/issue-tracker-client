@@ -1,0 +1,16 @@
+#nav-wrapper{
+width: 100vw;
+height: 9vh;
+border: 1px solid black;
+display: grid;
+align-items: center;
+}
+
+#nav-list{
+    margin:0;
+    padding: 0;
+    width: inherit;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+}
