@@ -2,11 +2,10 @@
   text-align: center;
   height: 100vh;
 }
-.login-component{
+.login-component {
   width: 400;
   height: 600;
   position: absolute;
+  display: grid;
+  align-content: center;
 }
-
-
-

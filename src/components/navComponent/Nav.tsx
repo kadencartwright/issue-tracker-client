@@ -1,37 +1,19 @@
 import { useAuth } from '../ProvideAuth'
-import {useHistory} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import './Nav.css'
-
+import React from 'react'
+import {LocationDescriptor} from 'history'
 export const Nav = ()=>{
-    const auth = useAuth()
-    const history = useHistory()
-    // the handlers to pass into our conditionally rendered ReactNode for login/logout nav elements
-    const loginHandler = ()=>{
-        history.push('/login')
-    }
-    const logoutHandler = ()=>{
-        auth.logout()
-        return
-    }
-    const loginControlButton= (props:{text:string,handler:()=>void})=>{
-        return (<li onClick={props.handler}>{props.text}</li>)
-    }
+  const auth = useAuth()
+  const NavItem = (props:{to:LocationDescriptor, children:React.ReactNode})=> (<li className='nav-list-item' ><Link to={props.to}className='nav-link'>{props.children}</Link></li>) 
 
-    return(
-        <nav id='nav-wrapper'>
-
-            <ol id='nav-list'>
-                <li className='nav-list-item'><p>Projects</p></li>
-                <li className='nav-list-item'><p>Tickets</p></li>
-                <li className='nav-list-item'><p>Dashboard</p></li>
-                {
-                auth.currentUser ? 
-                loginControlButton({text:'Log out', handler:logoutHandler})
-                : 
-                loginControlButton({text:'Login', handler: loginHandler})
-                }
-            </ol>
-           <p>{auth.currentUser?.bearer}</p>
-        </nav>
-    )
+  return(
+    <nav id='nav-wrapper'>
+      <ol id='nav-list'>
+      <NavItem to='/me/projects'>My Projects</NavItem>
+      <NavItem to='/me/tickets'>My Tickets</NavItem>
+      <NavItem to='/dashboard'>Dashboard</NavItem>
+      </ol>
+    </nav>
+  )
 }

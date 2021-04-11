@@ -6,12 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
-  background: #E7E7E7;
-
-  /*
-  background: rgb(19,84,215);
-  background: linear-gradient(90deg, rgba(19,84,215,1) 0%, rgb(63, 63, 236) 22%, rgba(0,170,255,1) 92%);
-  */
+  background: #eeeeee;
 }
 
 code{
