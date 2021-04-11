@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import {Login} from './components/loginComponent/Login'
 import ProvideAuth from './components/ProvideAuth'
+import PrivateRoute from './components/privateRouteComponent/PrivateRoute'
 import {
   BrowserRouter as Router,
   Switch,
@@ -32,7 +33,7 @@ function App() {
         <Router>
           <Switch>
             <Route exact path='/login' component={loginContainer}/>
-            <Route component={defaultContainer}/>
+            <PrivateRoute component={defaultContainer}/>
           </Switch>
         </Router>
       </ProvideAuth>
